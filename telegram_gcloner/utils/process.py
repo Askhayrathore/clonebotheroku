@@ -14,9 +14,9 @@ logger = logging.getLogger(__name__)
 
 def leave_chat_from_message(message, context):
     context.bot.send_message(chat_id=message.chat_id,
-                             text='Hey, thank you for adding ⚡️ CloneBot to this group. ' + config.AS_STRING.format(context.bot.username),
+                             text='Hey, thank you for adding CloneBot to this group. ' + config.AS_STRING.format(context.bot.username),
                              parse_mode=ParseMode.HTML)
-    context.bot.send_message(chat_id=message.chat_id, text='\n\nUnfortunately I am not allowed to be here 😔 \nIf you want me in this group, ask my owner to authorize me 😉.')
+    context.bot.send_message(chat_id=message.chat_id, text='\n\nUnfortunately I am not allowed to be here, \nIf you want me in this group, ask my owner to authorize me.')
     if message.from_user:
         mention_html_from_user = mention_html(message.from_user.id,
                                               message.from_user.full_name.full_name)
